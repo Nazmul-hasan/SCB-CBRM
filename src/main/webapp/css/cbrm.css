@@ -1,0 +1,55 @@
+
+.myleftside {
+  background: #f4f4f4;
+  -webkit-box-shadow: inset -3px 0px 8px -4px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset -3px 0px 8px -4px rgba(0, 0, 0, 0.1);
+  box-shadow: inset -3px 0px 8px -4px rgba(0, 0, 0, 0.07);
+}
+
+#first .smashinglogo 
+{
+	background: url("../img/scb.jpg") ;
+	background-size:100% auto;
+}
+.form-box .headerSgnIn {
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background: #3d9970;
+  box-shadow: inset 0px -2px 0px #8574AD;
+  padding: 10px 10px;
+  height: 72px;
+  text-align: left;
+  font-size: 22px;
+  font-weight: 300;
+  color: #fff;
+}
+
+  span.validaTionStyle {
+	color: #DD4B39;
+	display: inline-block;
+	font-size: 15px;
+	line-height: 13px;
+	margin: 4px 0px;
+	text-align: left;
+}
+
+.btn.btn-Signin{
+	background-color: #8574AD;
+	border-color: #8574AD;
+	background-image: linear-gradient(to bottom, #8574AD, #8574AD);
+	color: white;
+}
+
+.bg-clrSingin {
+   background-color: #F0F2F3 !important;
+}

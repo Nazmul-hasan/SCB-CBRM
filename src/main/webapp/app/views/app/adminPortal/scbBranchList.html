@@ -1,0 +1,67 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+   <h1>
+      ScbBranch <small>ScbBranch List</small>
+   </h1>
+   <ol class="breadcrumb">
+      <li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">ScbBranch List</li>
+   </ol>
+</section>
+<section class="content">
+   <div class="row" style="margin-top: -10px;">
+      <div class="col-xs-12">
+         <div data-ng-include="messagePageLocation"></div>
+      </div>
+   </div>
+   <div class="box box-primary" style="border-top-color: #8574AD;">
+      <div class="box-header">
+         <div class="pull-left box-tools">                                        
+            <button class="btn btn-primary  pull-left" ng-click="gotoScbBranch()">Add new</button>
+         </div>
+      </div>
+      <div class="box-body no-padding">
+         <div class="table-responsive">
+            <!-- .table - Uses sparkline charts-->
+            <table class="table table-striped">
+               <tr>
+                  <th>BrCode</th>
+                  <th>BrName</th>
+                  <th>BrAddress</th>
+                  <th>BrCodeForClRpt</th>
+                  <th>Division</th>
+                  <th>BbBrCode</th>
+                  <th>BbBrCodeForClRpt</th>
+                  <th>CreatedOn</th>
+                  <th>CreatedBy</th>
+                  <th>EditedOn</th>
+                  <th>EditedBy</th>
+               </tr>
+               <tr data-ng-repeat="scbBranch in scbBranchList">
+                  <td  style="min-width: 100px">
+                     <div class="btn-group">
+                        <button type="button" data-toggle="tooltip" title="Edit" class="btn btn-default fa fa-edit" ng-click="editScbBranch(scbBranch.oid)"></button>
+                        <button type="button" data-toggle="tooltip" title="Delete" class="btn btn-danger fa fa-trash-o" ng-click="deleteScbBranch(scbBranch);"></button>
+                     </div>
+                  </td>
+                  <td>{{scbBranch.brCode}}</td>
+                  <td>{{scbBranch.brName}}</td>
+                  <td>{{scbBranch.brAddress}}</td>
+                  <td>{{scbBranch.brCodeForClRpt}}</td>
+                  <td>{{scbBranch.division}}</td>
+                  <td>{{scbBranch.bbBrCode}}</td>
+                  <td>{{scbBranch.bbBrCodeForClRpt}}</td>
+                  <td>{{scbBranch.createdOn}}</td>
+                  <td>{{scbBranch.createdBy}}</td>
+                  <td>{{scbBranch.editedOn}}</td>
+                  <td>{{scbBranch.editedBy}}</td>
+               </tr>
+           
+            </table>
+            <!-- /.table -->
+         </div>
+      </div>
+      <!-- /.box-body-->
+   </div>
+   <!-- /.box -->
+</section>

@@ -1,0 +1,41 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:aop="http://www.springframework.org/schema/aop"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:jee="http://www.springframework.org/schema/jee"
+  xmlns:util="http://www.springframework.org/schema/util"
+  xmlns:tx="http://www.springframework.org/schema/tx"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.2.xsd
+           http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+		   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+
+ 
+	<context:annotation-config />
+	<context:property-placeholder location="classpath:db.properties" />
+	<!-- <context:property-placeholder location="classpath:meta.properties" /> -->
+	<context:component-scan base-package="com.secl.cbrm.rest.service" />
+	<context:component-scan base-package="com.secl.cbrm.cibreport.rest.service" />
+	<context:component-scan base-package="com.secl.cbrm.clbreport.rest.service" />
+	<context:component-scan base-package="com.secl.cbrm.finalcialreport.rest.service" />
+	<context:component-scan base-package="com.secl.cbrm.daynamicqueryreport.rest.service" />
+	<context:component-scan base-package="com.secl.cbrm.sbs3report.rest.service" />
+	
+	
+	<import resource="hibernate.xml"/>
+	<import resource="datasource.xml"/>
+	<import resource="bean.xml"/>
+	<import resource="cib_report_bean.xml"/>
+	<import resource="cl_report_bean.xml"/>
+	<import resource="daynamic_query_report_bean.xml"/>
+	<import resource="financial_report_bean.xml"/>
+	<import resource="sbs3_report_bean.xml"/>
+	
+	
+	
+</beans> 

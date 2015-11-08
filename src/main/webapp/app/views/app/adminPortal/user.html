@@ -1,0 +1,125 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+   <h1>
+      User <small>Add new user</small>
+   </h1>
+   <ol class="breadcrumb">
+      <li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">User</li>
+   </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+   <div class="box box-primary">
+      <div class="box-body no-padding">
+         <form name="userForm" novalidate>
+		  <div class="box-body">		
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="form-group">
+						<label class="control-label">Name<b style="color:red">*</b></label>
+							<select data-ng-model="user.name" id="ddlUser" ui-select2 class="form-control" style="padding: 0px;" data-placeholder="Select User">
+                               <option value=""></option>
+                               <option data-ng-repeat="user in users" value="{{user.name}}">{{user.name}}</option>
+                            </select>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-lg-4">
+	   				<div class="form-group" >
+	   					<label class="control-label">Login ID<b style="color:red">*</b></label>
+		        		<input type="text" id="txtLoginId" class="form-control"  name="userInfo.loginid" data-ng-model="user.loginid" required placeholder="Login ID" data-ng-blur = "checkLoginId(user.loginid)"/>
+		        		<span id="validaTionLoginId" class="validaTionStyle" style="display: none" data-i18n="val_input"></span>
+	    			</div>
+	    			
+				</div>
+			</div> 
+			
+			<div class="row">
+				<div class="col-lg-4">
+	   				<div class="form-group" >
+	   					<label class="control-label">Password<b style="color:red">*</b></label>
+		        		<input type="password" id="txtPassword" class="form-control"  name="user.password" data-ng-model="user.password" required placeholder="Password" data-ng-blur = "checkPasswordLength(user.password)"/>
+		        		<span id="validaTionPassword" class="validaTionStyle" style="display: none" data-i18n="val_input"></span>
+		        		<span id="validaTionNewPasswordLength" class="validaTionStyle" style="display: none" data-i18n="val_input_password_leangth"></span>
+	    			</div>
+	    			
+				</div>
+			</div> 
+	
+			<div class="row">
+				<div class="col-lg-4">
+	   				<div class="form-group" >
+	   					<label class="control-label">Confirm Password<b style="color:red">*</b></label>
+		        		<input type="password" id="txtConfirmPassword" class="form-control"  name="user.confirmPassword" data-ng-model="user.confirmPassword" required placeholder="Confirm Password" data-ng-blur = "checkConfirmPassword(user.confirmPassword)"/>
+		        		<span id="validaTionConfirmPassword" class="validaTionStyle" style="display: none" data-i18n="val_input"></span>
+		        		<span id="validationNewPwdAndConfirmPwd" class="validaTionStyle" style="display: none" data-i18n="val_input_new_confirm_password_same"></span>
+	    			</div>
+	    			
+				</div>
+			</div> 
+			<div class="row">
+				<div class="col-lg-4">
+	   				<div class="form-group" >
+	   					<label class="control-label">Notification Email</label>
+		        		<input type="text" id="txtEmail" class="form-control"  name="user.email" data-ng-model="user.email" required placeholder="Email"  />
+		        		
+	    			</div>
+	    			
+				</div>
+			</div> 
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="form-group">
+						<label class="control-label">Primary Role<b style="color:red">*</b></label>
+
+							<select data-ng-model="user.roleid" id="ddlPrimaryRole" ui-select2 class="form-control" style="padding: 0px;" data-placeholder="Select Role"  onblur = "checkRole(user.roleid)">
+                               <option value=""></option>
+                               <option data-ng-repeat="role in primaryRole " value="{{role.roleID}}">{{role.roleID }}</option> 
+                            </select>
+                            <span id="validaTionPrimaryRole" class="validaTionStyle" style="display: none" data-i18n="val_input"></span>
+						   
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-lg-4">
+				<div class="col-md-6" style="margin-left: -15px">
+					<div class="form-group">
+						<label class="control-label">Secondary Role</label>
+							<select data-placeholder="Select Secondary Roles "  multiple chosen="secoundaryRole" class="form-control" 
+											 	data-ng-model="user.selectedItems"  data-ng-options="role.roleID for role in secoundaryRole" ng-disabled="isDisabled">
+							</select>
+					</div>
+				</div>
+				</div>
+			</div>
+			
+	  <div class="row">
+				<div class="col-lg-4">
+					<div class="form-group">
+						<label class="control-label">Primary Role<b style="color:red">*</b></label>
+
+							<select data-ng-model="user.roleid" id="ddlPrimaryRole" ui-select2 class="form-control" style="padding: 0px;" data-placeholder="Select Role"  onblur = "checkRole(user.roleid)">
+                               <option value=""></option>
+                               <option data-ng-repeat="role in primaryRole " value="{{role.roleID}}">{{role.roleID }}</option> 
+                            </select>
+                            <span id="validaTionPrimaryRole" class="validaTionStyle" style="display: none" data-i18n="val_input"></span>
+						   
+					</div>
+				</div>
+			</div> 
+	   
+	        <div class="form-actions ">      
+	      	  <button class="btn btn-primary"  data-ng-click ="saveUser(user)">Save</button>&nbsp&nbsp
+	      	  <button class="btn btn-default" type="reset"  ng-click="reset()">Reset</button>&nbsp&nbsp
+	      	  <button class="btn btn-default" data-ng-click="goBackInUserListPage()"><i class="fa fa-arrow-left"></i>&nbsp;<b>Go Back<b></button>
+	      	</div> 
+		</form>
+      </div>
+   </div>
+</section>
+<!-- /.content -->

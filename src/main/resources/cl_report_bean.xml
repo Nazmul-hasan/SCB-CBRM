@@ -1,0 +1,14 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="cl_1_ReportManager" class="com.secl.cbrm.clreportmanager.impl.Cl_1_ReportManagerImpl" parent="manager" />
+     
+      <bean id="cl_1_ReportService" class="com.secl.cbrm.clbreport.rest.service.Cl_1_ReportService">
+		  <property name="cl_1_ReportManager" 	        	    ref="cl_1_ReportManager"/>
+		  <property name="sessionManager" 				        ref="sessionManager"/>
+	</bean>
+    
+</beans>
+

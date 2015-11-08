@@ -1,0 +1,45 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+   <h1>
+      Branch <small>Branch List</small>
+   </h1>
+   <ol class="breadcrumb">
+      <li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">Branch List</li>
+   </ol>
+</section>
+<section class="content">
+   <div class="row" style="margin-top: -10px;">
+      <div class="col-xs-12">
+         <div data-ng-include="messagePageLocation"></div>
+      </div>
+   </div>
+   <div class="box box-primary" style="border-top-color: #8574AD;">
+      <div class="box-header">
+         <div class="pull-left box-tools">                                        
+            <button class="btn btn-primary  pull-left" ng-click="gotoBranch()">Add new</button>
+         </div>
+      </div>
+      <div class="box-body no-padding">
+         <div class="table-responsive">
+            <table class="table table-striped">
+               <tr>
+                  <th>Action</th>
+                  <th>Name</th>
+                  <th>Address</th>
+               </tr>
+               <tr data-ng-repeat="branch in branchlis">
+                  <td  style="min-width: 100px">
+                     <div class="btn-group">
+                        <button type="button" data-toggle="tooltip" title="Edit" class="btn btn-default fa fa-edit" ng-click="editBranch(branch.oid)"></button>
+                        <button type="button" data-toggle="tooltip" title="Delete" class="btn btn-danger fa fa-trash-o" ng-click="deleteBranch(branch);"></button>
+                     </div>
+                  </td>
+                  <td>{{branch.name}}</td>
+                  <td>{{branch.address}}</td>
+               </tr>
+            </table>
+         </div>
+      </div>
+   </div>
+</section>

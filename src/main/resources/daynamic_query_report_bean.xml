@@ -1,0 +1,14 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+     <bean id="detailBorrowerListManager" class="com.secl.cbrm.dynamicqueryreportsmanager.impl.DetailBorrowerListManagerImpl" parent="manager" />
+     
+      <bean id="detailBorrowerListService" class="com.secl.cbrm.daynamicqueryreport.rest.service.DetailBorrowerListService">
+		  <property name="detailBorrowerListManager" 	        	    ref="detailBorrowerListManager"/>
+		  <property name="sessionManager" 				                ref="sessionManager"/>
+	</bean>
+   
+</beans>
+

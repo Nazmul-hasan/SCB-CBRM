@@ -1,0 +1,107 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="springTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+  		<property name="dataSource" 					ref="dataSource"></property>
+	</bean>
+   	
+    <!-- Dao Classes -->
+    <bean id="simpleJdbcDao" class="com.secl.cbrm.db.dao.impl.SimpleJdbcDaoImpl">
+        <property name="dataSource" 					ref="dataSource" />
+    </bean>
+    
+    <bean id="springJdbcDao" class="com.secl.cbrm.db.dao.impl.SpringJdbcDaoImpl">
+        <property name="dataSource" 				ref="dataSource" />
+        <property name="transactionManager" 			ref="springTransactionManager"></property>
+    </bean>
+            
+	<bean id="hibernateDao" class="com.secl.cbrm.db.dao.impl.HibernateDaoImpl">
+		<property name="sessionFactory" 				ref="sessionFactory" />
+	</bean>
+	
+   	<bean id="idGenerator" class="com.secl.cbrm.manager.impl.IDGeneratorImpl" />
+	<bean id="queryManager" class="com.secl.cbrm.querymanager.impl.SQLServerQueryManagerImpl" />
+	<bean id="cibReportQueryManager" class="com.secl.cbrm.querymanager.impl.CibReportQueryManagerImpl" />
+	<bean id="clReportQueryManager" class="com.secl.cbrm.querymanager.impl.ClReportQueryManagerImpl" />
+	<bean id="daynamicQueryReportQueryManager" class="com.secl.cbrm.querymanager.impl.DaynamicQueryReportQueryManagerImpl" />
+	<bean id="financialReportQueryManager" class="com.secl.cbrm.querymanager.impl.FinancialReportQueryManagerImpl" />
+	<bean id="sbs3ReportQueryManager" class="com.secl.cbrm.querymanager.impl.SBS3ReportQueryManagerImpl" />
+	
+	<bean id="sessionManager" class="com.secl.cbrm.manager.impl.SessionManagerImpl" />
+	<bean id="reportUtil" class="com.secl.cbrm.utils.ReportUtil" init-method="init">
+		<property name="folderName" 					value="${report.folder}" />
+		<property name="logo" 							value="${report.logo}" />
+		<property name="dataSource" 					ref="dataSource" />
+	</bean>
+	<!-- Manager Classes -->
+    <bean id="manager" class="com.secl.cbrm.manager.impl.ManagerImpl">
+        <property name="dataSource" 					    ref="dataSource"/>
+        <property name="queryManager" 					    ref="queryManager"/>
+        <property name="cibReportQueryManager" 				ref="cibReportQueryManager"/>
+        <property name="clReportQueryManager" 				ref="clReportQueryManager"/>
+        <property name="daynamicQueryReportQueryManager" 	ref="daynamicQueryReportQueryManager"/>
+        <property name="financialReportQueryManager" 		ref="financialReportQueryManager"/>
+        <property name="sbs3ReportQueryManager" 			ref="sbs3ReportQueryManager"/>
+        <property name="sessionManager" 				    ref="sessionManager"/>
+        <property name="idGenerator" 					    ref="idGenerator"/>
+        <property name="hibernateDao" 					    ref="hibernateDao"/>
+        <property name="springJdbcDao"                      ref="springJdbcDao" />
+        <property name="simpleJdbcDao"                      ref="simpleJdbcDao" />
+        <property name="reportUtil" 					    ref="reportUtil"/>
+    </bean>
+    
+    <bean id="loginManager" class="com.secl.cbrm.manager.impl.LoginManagerImpl" parent="manager" />
+    
+    <bean id="userManager" class="com.secl.cbrm.manager.impl.UserManagerImpl" parent="manager" />
+    
+    <bean id="branchManager" class="com.secl.cbrm.manager.impl.BranchManagerImpl" parent="manager" />
+    
+     <bean id="testManager" class="com.secl.cbrm.manager.impl.TestManagerImpl" parent="manager" />
+    
+    <bean id="sectorCodeManager" class="com.secl.cbrm.manager.impl.SectorCodeManagerImpl" parent="manager" />
+   
+    <bean id="scbBranchManager" class="com.secl.cbrm.manager.impl.ScbBranchManagerImpl" parent="manager" />
+    
+    <bean id="bddb2TextFilesDataUploadManager" class="com.secl.cbrm.manager.impl.BDDB2TextFilesDataUploadManagerImpl" parent="manager" />
+    
+    <bean id="loginService" class="com.secl.cbrm.rest.service.LoginService">
+		  <property name="loginManager" 				ref="loginManager"/>
+		  <property name="sessionManager" 				ref="sessionManager"/>  
+	</bean>
+	
+    <bean id="userService" class="com.secl.cbrm.rest.service.UserService">
+		  <property name="userManager" 	        	    ref="userManager"/>
+		  <property name="sessionManager" 				ref="sessionManager"/>
+	</bean>
+	
+    <bean id="branchService" class="com.secl.cbrm.rest.service.BranchService">
+		  <property name="branchManager" 				ref="branchManager"/>
+		  <property name="sessionManager" 				ref="sessionManager"/>  
+	</bean>
+	
+	 <bean id="testService" class="com.secl.cbrm.rest.service.TestService">
+		  <property name="testManager" 				    ref="testManager"/>
+		  <property name="sessionManager" 				ref="sessionManager"/>  
+	</bean>
+	
+	<bean id="scbBranchService" class="com.secl.cbrm.rest.service.ScbBranchService">
+		  <property name="scbBranchManager" 			ref="scbBranchManager"/>
+		  <property name="sessionManager" 				ref="sessionManager"/>  
+	</bean>
+	
+	<bean id="sectorCodeService" class="com.secl.cbrm.rest.service.SectorCodeService">
+		  <property name="sectorCodeManager" 				ref="sectorCodeManager"/>
+		  <property name="sessionManager" 					ref="sessionManager"/>  
+	</bean>
+
+     <bean id="bddb2TextFilesDataUploadService" class="com.secl.cbrm.rest.service.BDDB2TextFilesDataUploadService">
+		  <property name="bddb2TextFilesDataUploadManager" 				ref="bddb2TextFilesDataUploadManager"/>
+		  <property name="sessionManager" 				                ref="sessionManager"/>  
+	</bean>
+	
+     <bean id="fileUploadService" class="com.secl.cbrm.rest.service.FileUploadService"></bean>
+    
+</beans>
+

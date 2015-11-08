@@ -1,0 +1,55 @@
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+	<h1>
+		Test <small>Add Test</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+		<li class="active">Test</li>
+	</ol>
+</section>
+<div class="row" style="margin-top: -10px;">
+		<div class="col-xs-12">
+			<div data-ng-include="messagePageLocation"></div>
+		</div>
+	</div>
+<section class="content">
+  <div class="box box-primary" style="border-top-color: #8574AD;">
+   <!-- form start -->
+   <form novalidate>
+      <div class="box-body">
+         <div class="row">
+         </div>
+         <div class="row">
+            <div class="col-lg-4">
+               <div class="form-group" show-errors='{showSuccess: true}'>
+                  <label class="control-label">Name<b style="color:red">*</b> 
+                  <b tooltip-placement="right" tooltip="Please Mention the Sequence for this Grade">
+                  <i class="fa fa-question-circle"></i></label></b>
+                  <input type="text" class="form-control" data-ng-model="test.name" placeholder="Test Name"></input>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-lg-4">
+               <div class="form-group" >
+                  <label class="control-label">Description<b style="color:red">*</b></label>
+                  <input type="text" id="txtgradePosition" class="form-control"  data-ng-model="test.description"  placeholder="Description" />
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer">      
+         <button class="btn btn-primary" ng-click="saveTest(test)">Save</button>&nbsp;
+         <button class="btn btn-default" type="reset"  ng-click="reset()">Reset</button>&nbsp;
+      </div>
+   </form>
+</div>
+<!-- /.box -->
+
+</section>
+
+
+

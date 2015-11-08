@@ -1,0 +1,62 @@
+
+
+<section id="first" class="story" data-speed="8" data-type="background">
+    <div  class="row smashinglogo" style="height:630px">
+
+   <!--  <div class="col-md-3 runningVersion" >
+		<span>{{aboutMetrica}}</span>
+	</div> -->
+        <div class="col-md-12">
+       
+        	<div class="form-box " id="login-box">
+        	  <div class="row">
+			    <div data-ng-include="messagePageLocation"></div>
+		      </div> 
+			    <div class="headerSgnIn" style="background-color:#F1F1F1;color:black">Sign In <img class="pull-right" src="img/scb-logo.gif" style="margin-top:0px;margin-right:0px;height:85%"> </img>
+			    	 <br> <span style="padding-left:8px;" class="runningVersion">{{aboutMetrica}} </span> 
+			    </div>
+			    <form method="post" id="SigninForm" name="SigninForm" autocomplete="off">
+			        <div class="body bg-clrSingin">
+			            <div class="form-group has-feedback">
+			                <input type="text" data-ng-model="user.loginId" name="userid" class="form-control" placeholder="User ID"  autofocus="autofocus"  data-ng-blur = "checkloginid(user.loginId)"/>
+			                <span id="validationloginid" class="validaTionStyle" style="display: none" data-i18n="val_input_login_id"></span>
+			                <span id="validationinvalidloginid" class="validaTionStyle" style="display: none;" data-i18n="val_input_invalid_login_id"></span>
+			            </div>
+			            <div class="form-group">
+			                <input type="password" data-ng-model="user.password" name="password" class="form-control" placeholder="Password"   data-ng-blur = "checkloginpwd(user.password)"/>
+			            	<span id="validationloginpwd" class="validaTionStyle" style="display: none" data-i18n="val_input_login_password"></span>
+			            	<span id="validationinvalidpassword" class="validaTionStyle" style="display: none" data-i18n="val_input_invalid_password"></span>
+			            </div> 
+			                   
+			            <div class="form-group" style="height:20px;">
+			                <div style="float:left"><a title="Click to reset password" ng-click="divOn()" style="cursor:pointer">Forgot Password?</a></div>
+			                 <button class="btn btn-Signin" style="float:right" ng-click="signIn(user)">Sign me in </button>
+			                  <span data-ng-show ="ivdUsr" style="color:red;"><i class="fa  fa-times"></i> Invalid User !</span>
+			            </div>
+			       
+			            <div data-ng-show = "isforgetPassword">
+					   
+			            <div >
+			                <input type="text" data-ng-model="usermailinfo.emailID" class="form-control" placeholder="input your Email ID"  autofocus="autofocus"  required />
+			                <span data-ng-show ="failled" style="color:red;"><i class="fa  fa-times"></i> Invalid registered email address !</span>
+			            	<span data-ng-show ="success" style="color:green;"><i class="fa fa-check-square"></i>Password has been sent to your email</span>
+			            </div> 
+			            &nbsp;
+			             <div >
+			             <button class="btn btn-primary" data-ng-click="sendMessageToMail(usermailinfo)">Submit</button>
+				      	 <button class="btn btn-default" type="cancel" data-ng-click="cancelDiv()">Cancel</button>
+			            </div>
+	              </div>
+			    </div>
+			     
+			 </form>
+			
+			</div>
+        </div>
+    </div>
+     
+     <div class="footers">
+     <span class="text-muted copyrightFont" style="float: right;">{{copyrightText}} </span>
+     <span class="text-muted copyrightFont">{{version}}</span>
+     </div>
+    </section>

@@ -1,0 +1,127 @@
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+	<h1>
+		ScbBranch <small>Add ScbBranch</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+		<li class="active">ScbBranch</li>
+	</ol>
+</section>
+<div class="row" style="margin-top: -10px;">
+		<div class="col-xs-12">
+			<div data-ng-include="messagePageLocation"></div>
+		</div>
+	</div>
+<section class="content">
+  <div class="box box-primary" style="border-top-color: #8574AD;">
+   <!-- form start -->
+   <form novalidate>
+      <div class="box-body">
+         <div class="row">
+         </div>
+         <div class="row">
+            <div class="col-lg-4">
+               <div class="form-group" show-errors='{showSuccess: true}'>
+                  <label class="control-label">BrCode<b style="color:red">*</b> 
+                  <b tooltip-placement="right" tooltip="Please Mention the Sequence for this Grade">
+                  <i class="fa fa-question-circle"></i></label></b>
+                  <input type="text" class="form-control" data-ng-model="scbBranch.brCode" placeholder="ScbBranch BrCode"></input>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-lg-4">
+               <div class="form-group" >
+                  <label class="control-label">BrName<b style="color:red">*</b></label>
+                  <input type="text" id="txtgradePosition" class="form-control"  data-ng-model="scbBranch.brName"  placeholder="BrName" />
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-lg-4">
+               <div class="form-group" >
+                  <label class="control-label">BrAddress<b style="color:red">*</b></label>
+                  <input type="text" id="txtgradePosition" class="form-control"  data-ng-model="scbBranch.brAddress"  placeholder="ScbBranch BrAddress"></input>
+               </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+               <div class="form-group" >
+                  <label class="control-label">BrCodeForClRpt<b style="color:red">*</b></label>
+                  <input type="text" id="txtgradePosition" class="form-control"  data-ng-model="scbBranch.brCodeForClRpt"  placeholder="ScbBranch BrCodeForClRpt" ></input>
+               </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+               <div class="form-group"  >
+                  <label class="control-label">Division<b style="color:red">*</b></label>
+                  <input type="text" id="txtgradePosition" class="form-control"  data-ng-model="scbBranch.division"  placeholder="ScbBranch Division" ></input>
+               </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+               <div class="form-group"  >
+                  <label class="control-label">BbBrCode<b style="color:red">*</b></label>
+                  <input type="text" id="txtgradePosition" class="form-control"  data-ng-model="scbBranch.bbBrCode"  placeholder="ScbBranch BbBrCode" ></input>
+               </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+               <div class="form-group"  >
+                  <label class="control-label">BbBrCodeForClRpt<b style="color:red">*</b></label>
+                  <input type="text" id="txtgradePosition" class="form-control"  data-ng-model="scbBranch.bbBrCodeForClRpt"  placeholder="ScbBranch BbBrCodeForClRpt"></input>
+               </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+               <div class="form-group" >
+                  <label class="control-label">CreatedOn<b style="color:red">*</b></label>
+                  <input type="text" id="txtgradePosition" class="form-control"  data-ng-model="scbBranch.createdOn"  placeholder="ScbBranch CreatedOn" ></input>
+               </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+               <div class="form-group"  >
+                  <label class="control-label">CreatedBy<b style="color:red">*</b></label>
+                  <input type="text" id="txtgradePosition" class="form-control"  data-ng-model="scbBranch.createdBy"  placeholder="ScbBranch CreatedBy"></input>
+               </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+               <div class="form-group"  >
+                  <label class="control-label">EditedOn<b style="color:red">*</b></label>
+                  <input type="text" id="txtgradePosition" class="form-control"  data-ng-model="scbBranch.editedOn"  placeholder="ScbBranch EditedOn" ></input>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+               <div class="form-group"  >
+                  <label class="control-label">EditedBy<b style="color:red">*</b></label>
+                  <input type="text" id="txtgradePosition" class="form-control"  data-ng-model="scbBranch.editedBy"  placeholder="ScbBranch EditedBy" ></input>
+               </div>
+            </div>
+          </div>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer">      
+         <button class="btn btn-primary" ng-click="saveScbBranch(scbBranch)">Save</button>&nbsp;
+         <button class="btn btn-default" type="reset"  ng-click="reset()">Reset</button>&nbsp;
+      </div>
+   </form>
+</div>
+<!-- /.box -->
+
+</section>
+
+
+

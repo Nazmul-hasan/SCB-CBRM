@@ -1,0 +1,14 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+     <bean id="sbs3_Advance_Summary_ReportManager" class="com.secl.cbrm.sbs3reportmanager.impl.SBS3_Advance_Summary_ReportManagerImpl" parent="manager" />
+     
+      <bean id="sbS3_ReportService" class="com.secl.cbrm.sbs3report.rest.service.SbS3_ReportService">
+		  <property name="sbs3_Advance_Summary_ReportManager" 	        	    ref="sbs3_Advance_Summary_ReportManager"/>
+		  <property name="sessionManager" 				                        ref="sessionManager"/>
+	</bean>
+   
+</beans>
+

@@ -1,0 +1,122 @@
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+	<h1>
+		Dashboard <small>User Dashboard</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+		<li class="active">Dashboard</li>
+	</ol>
+</section>
+
+<section class="content">
+  <div class="row" style="margin-top: -10px;">
+		<div class="col-xs-12">
+			<div data-ng-include="messagePageLocation"></div>
+		</div>
+	</div>
+<div class="box box-primary">
+      <div class="box-body no-padding">
+         <form name="userForm" novalidate>
+		  <div class="box-body">	
+	       <div class="row">
+				<div class="col-lg-4">
+					<div class="form-group">
+						<label class="control-label">File Type<b style="color:red">*</b></label>
+
+							<select data-ng-model="upload.roleid" id="ddlupload" ui-select2 class="form-control" style="padding: 0px;" data-placeholder="Select Role"  onblur = "checkRole(user.roleid)">
+                               <option value=""></option>
+                               <option data-ng-repeat="role in upload " value="{{role.roleID}}">{{role.roleID }}</option> 
+                            </select>
+                            <span id="validaTionPrimaryRole" class="validaTionStyle" style="display: none" data-i18n="val_input"></span>
+						   
+					</div>
+				</div>
+			</div> 
+			 <div class="row">
+				<div class="col-lg-4">
+					<div class="form-group">
+						<label class="control-label">Upload Type<b style="color:red">*</b></label>
+
+							<select data-ng-model="upload.roleid" id="ddlupload" ui-select2 class="form-control" style="padding: 0px;" data-placeholder="Select Role"  onblur = "checkRole(user.roleid)">
+                               <option value=""></option>
+                               <option data-ng-repeat="role in upload " value="{{role.roleID}}">{{role.roleID }}</option> 
+                            </select>
+                            <span id="validaTionPrimaryRole" class="validaTionStyle" style="display: none" data-i18n="val_input"></span>
+						   
+					</div>
+				</div>
+			</div> 
+			 <div class="row">
+				<div class="col-lg-4">
+					<div class="form-group">
+						<label class="control-label">Month<b style="color:red">*</b></label>
+
+							<select data-ng-model="upload.roleid" id="ddlupload" ui-select2 class="form-control" style="padding: 0px;" data-placeholder="Select Role"  onblur = "checkRole(user.roleid)">
+                               <option value=""></option>
+                               <option data-ng-repeat="role in upload " value="{{role.roleID}}">{{role.roleID }}</option> 
+                            </select>
+                            <span id="validaTionPrimaryRole" class="validaTionStyle" style="display: none" data-i18n="val_input"></span>
+						   
+					</div>
+				</div>
+			</div> 
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="form-group">
+						<label class="control-label">Select Year<b style="color:red">*</b></label>
+
+							<select data-ng-model="upload.roleid" id="ddlupload" ui-select2 class="form-control" style="padding: 0px;" data-placeholder="Select Role"  onblur = "checkRole(user.roleid)">
+                               <option value=""></option>
+                               <option data-ng-repeat="role in upload " value="{{role.roleID}}">{{role.roleID }}</option> 
+                            </select>
+                            <span id="validaTionPrimaryRole" class="validaTionStyle" style="display: none" data-i18n="val_input"></span>
+						   
+					</div>
+				</div>
+			</div>
+			 <div class="row">   
+	          <div class="col-md-4">
+		         <div class="form-group" >
+	        		<input type="file" class="form-control"  ng-model-instant id="fileToUpload" data-toggle="tooltip" title="Filepath" placeholder="File Path"  multiple onchange="angular.element(this).scope().setFiles(this)"/>
+			      </div>
+	         </div>
+	     </div>
+	      <div class="row">
+	         <div class="col-md-7" ng-hide="true">
+		           <div class="form-group" >
+		              <input type="text" id="uploadFile" class="form-control" placeholder="file path" disabled="disabled" />
+		          </div>
+	          </div>
+	          <div class="col-md-8" ng-hide="true">
+		           <div class="form-group" >
+		              <input type="text" ng-model="wbsUpload.filePath" class="form-control" placeholder="file path" disabled="disabled" />
+		          </div>
+	          </div>	
+	          <div class="col-md-2">
+               <div ng-show="files.length">
+		        <button type="button" class="btn btn-default"  ng-click="uploadFile()"><i class="fa fa-upload"></i> Upload</button>
+		       </div>
+		      </div>
+		   	<div class="col-md-1">
+		   	 <div ng-show="progressVisible">
+	           <div class="percent">{{progress}}%</div>
+	           <div class="progress-bar">
+	               <div class="uploaded" ng-style="{'width': progress+'%'}"></div>
+	           </div>
+			 </div>
+		   	</div>
+	       </div>
+	   
+	        <div class="form-actions " style="margin-top: 10px;">      
+	      	  <button class="btn btn-primary"  data-ng-click ="uploadBDDB2Data()">Save</button>&nbsp&nbsp
+	      	  <button class="btn btn-default" data-ng-click="goBackInUserListPage()"><i class="fa fa-arrow-left"></i>&nbsp;<b>Go Back<b></button>
+	      	</div> 
+		</form>
+      </div>
+   </div>
+</section>
+
+
+

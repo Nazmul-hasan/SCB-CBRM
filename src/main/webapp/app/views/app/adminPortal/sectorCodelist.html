@@ -1,0 +1,39 @@
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+	<h1>
+		SectorCode<small>View Code</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+		<li class="active">SectorCode</li>
+	</ol>
+</section>
+
+<section class="content">
+   <div class="row" style="margin-top: -10px;">
+      <div class="col-xs-12">
+         <div data-ng-include="messagePageLocation"></div>
+      </div>
+   </div>
+   <div class="box box-primary" style="border-top-color: #8574AD;">
+      <div class="box-body no-padding">
+         <div class="table-responsive">
+            <table class="table table-striped">
+               <tr>
+                  <th>Section Code</th>
+                  <th>Description</th>
+               </tr>
+               <tr data-ng-repeat="sector in sectorCodes">
+                  <td>{{sector.sectorCode}}</td>
+                  <td>{{sector.description}}</td>
+               </tr>
+            </table>
+         </div>
+      </div>
+   </div>
+
+</section>
+
+
+
